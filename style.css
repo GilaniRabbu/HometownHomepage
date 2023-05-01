@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.header {
+    background: url(img/Home.png);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px 10px;
+}
+
+#title {
+    color: #131920;
+    background: #ffffffc5;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 20px 0;
+}
+
+#sub-title {
+    margin: 0;
+    color: #222D39;
+    background: #ffffffc5;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+.activities {
+    padding-top: 10px;
+    background: #131920;
+}
+
+.activities-title {
+    color: #4DBBFF;
+}
+
+.rows {
+    display: flex;
+    justify-content: space-around;
+}
+
+.activity {
+    color: #4DBBFF;
+    padding: 20px;
+    flex: 33.33%;
+}
+
+.activity-img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.guide {
+    padding: 50px 0;
+    color: #4DBBFF;
+    background: #222D39;
+}
+
+.guide-card {
+    max-width: 400px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 15px;
+    margin: 0 auto;
+    color: #4DBBFF;
+    background: #131920;
+    border-bottom: 10px solid #4DBBFF;
+    border-radius: 5px;
+}
+
+.guide-img {
+    width: 150px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+@media (max-width: 600px) {
+    #sub-title {
+        font-size: 15px;
+    }
+
+    .rows {
+        display: flex;
+        flex-direction: column;
+    }
+}

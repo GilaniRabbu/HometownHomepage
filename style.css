@@ -1,4 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+/* Font Family */
+
+@font-face {
+    font-family: 'Regular';
+    src: url('https://assets.website-files.com/6603dc3d48076e08e9ab0173/6603e6badacf57ccfac73dfb_MagilioRegular-Yzv2O.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Font Family */
+
+
+
+/* Default CSS */
 
 *,
 *::before,
@@ -6,63 +20,129 @@
     box-sizing: border-box;
 }
 
-body {
+* {
     margin: 0;
-    text-align: center;
-    font-family: 'Josefin Sans', sans-serif;
+    padding: 0;
 }
 
+body {
+    text-align: center;
+    font-family: Regular, sans-serif;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    letter-spacing: 0.5px;
+}
+
+/* Default CSS */
+
+
+
+/* Header Section */
+
 .header {
-    background: url(img/Home.png);
+    background: url(img/Town.jpg);
     background-position: center;
     background-size: cover;
+    background-color: #131920bb;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding: 100px 10px;
+}
+
+.home-img {
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+    border: 5px solid #4DBBFF;
+    border-radius: 180px 180px 5px 5px;
 }
 
 #title {
     color: #131920;
     background: #ffffffc5;
+    display: inline-block;
     border-radius: 5px;
     padding: 10px 15px;
     margin: 20px 0;
 }
 
 #sub-title {
-    margin: 0;
     color: #222D39;
     background: #ffffffc5;
+    width: 70%;
     border-radius: 5px;
     padding: 10px 15px;
+    margin: 0 auto;
 }
 
+/* Header Section */
+
+
+
+/* Activity Section */
+
 .activities {
-    padding-top: 10px;
+    padding: 40px 0;
+    color: #4DBBFF;
     background: #131920;
 }
 
-.activities-title {
-    color: #4DBBFF;
-}
-
 .rows {
-    display: flex;
-    justify-content: space-around;
+    padding: 16px 0;
+    margin: 0 auto;
+    display: grid;
+    gap: 16px;
+    width: min(calc(100% - 32px), 1280px);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .activity {
-    color: #4DBBFF;
     padding: 20px;
-    flex: 33.33%;
+    overflow: hidden;
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
 }
 
 .activity-img {
-    width: 100px;
+    width: 128px;
+    margin: 0 auto;
     border-radius: 50%;
 }
+
+/* Activity Section */
+
+
+
+/* Guide Section */
 
 .guide {
     padding: 50px 0;
@@ -73,29 +153,73 @@ body {
 .guide-card {
     max-width: 400px;
     display: flex;
-    justify-content: space-around;
-    text-align: center;
+    gap: 15px;
+    justify-content: center;
+    text-align: left;
     padding: 15px;
     margin: 0 auto;
-    color: #4DBBFF;
     background: #131920;
     border-bottom: 10px solid #4DBBFF;
     border-radius: 5px;
 }
 
 .guide-img {
-    width: 150px;
+    width: 152px;
     border-radius: 5px;
-    margin-right: 5px;
 }
 
-@media (max-width: 600px) {
-    #sub-title {
-        font-size: 15px;
+.guide-title {
+    margin-bottom: 10px;
+}
+
+.guide-name {
+    margin-top: 10px;
+}
+
+/* Guide Section */
+
+
+
+/* Responsiveness */
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 24px;
     }
 
-    .rows {
-        display: flex;
+    h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 640px) {
+    .home-img {
+        width: 40%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .guide-card {
+        max-width: 300px;
         flex-direction: column;
+        text-align: center;
+    }
+
+    .guide-img {
+        margin: 0 auto;
     }
 }

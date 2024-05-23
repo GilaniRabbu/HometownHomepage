@@ -23,6 +23,7 @@
 * {
     margin: 0;
     padding: 0;
+    font: inherit;
 }
 
 body {
@@ -109,13 +110,13 @@ p {
 
 /* Activity Section */
 
-.activities {
+.activities-section {
     padding: 40px 0;
     color: #4DBBFF;
     background: #131920;
 }
 
-.rows {
+.activities-grid {
     padding: 16px 0;
     margin: 0 auto;
     display: grid;
@@ -142,12 +143,154 @@ p {
 
 
 
-/* Guide Section */
+/* Timeline Section */
 
-.guide {
+.timeline-section {
     padding: 50px 0;
     color: #4DBBFF;
-    background: #222D39;
+    background-color: #222D39;
+}
+
+.timeline-title {
+    padding-bottom: 30px;
+}
+
+.timeline-container {
+    margin: 0 auto;
+    position: relative;
+    width: min(calc(100% - 32px), 1280px);
+}
+
+.timeline-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 6px;
+    margin-left: -3px;
+    background-color: #FFF;
+}
+
+.container {
+    width: 50%;
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: -12px;
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+    border-radius: 50%;
+    background-color: #FFF;
+    border: 5px solid #4DBBFF;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.left::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    right: 30px;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    border: medium solid #FFF;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #FFF;
+}
+
+.right::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    border: medium solid #FFF;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #FFF transparent transparent;
+}
+
+.right::after {
+    left: -12px;
+}
+
+.left .content {
+    text-align: right;
+}
+
+.right .content {
+    text-align: left;
+}
+
+.content {
+    padding: 20px 30px;
+    position: relative;
+    border-radius: 6px;
+    background-color: #FFF;
+}
+
+.content h3 {
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .timeline-container::after {
+        left: 31px;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .container::before {
+        left: 60px;
+        border: medium solid #FFF;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #FFF transparent transparent;
+    }
+
+    .left::after,
+    .right::after {
+        left: 18px;
+    }
+
+    .right {
+        left: 0%;
+    }
+
+    .left .content {
+        text-align: left;
+    }
+}
+
+/* Timeline Section */
+
+
+
+/* Guide Section */
+
+.guide-section {
+    padding: 50px 0;
+    color: #4DBBFF;
+    background: #131920;
 }
 
 .guide-card {
@@ -160,6 +303,7 @@ p {
     margin: 0 auto;
     background: #131920;
     border-bottom: 10px solid #4DBBFF;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.75);
     border-radius: 5px;
 }
 
